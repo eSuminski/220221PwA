@@ -33,4 +33,6 @@ You can expect the following training mediums in this course:
 - Lectures
 - Projects
 - Quizzes
-- Mock Interviews 
+- Mock Interviews
+- Coding Challenges
+- Practice Examples
