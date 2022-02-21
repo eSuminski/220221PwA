@@ -1,0 +1,1 @@
+Pycharm will let you see and add to the content of more than just python files
