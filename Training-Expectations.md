@@ -22,7 +22,8 @@
         - good lighting
 - don't smoke, vape, or drink alcoholic beverages on camera
 - be mindful of what you are eating or drinking on camera
-
+- use the raise hand Zoom feature if you have questions
+    - keep your questions on topic
 # Behavior Expectations
 - Be respectful to everyone
 - If you disagree with someone else do so without personally attacking the other person
@@ -36,3 +37,9 @@ You can expect the following training mediums in this course:
 - Mock Interviews
 - Coding Challenges
 - Practice Examples
+
+# Dress Code
+- Business professional Monday
+- Business casual Tuesday-Thursday
+- Casual Friday
+    - work appropriate
