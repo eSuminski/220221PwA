@@ -113,7 +113,6 @@ The first one is class method
 
 
 class UsingClassFields:
-
     class_count = 0
 
     def __init__(self):
@@ -128,4 +127,27 @@ class UsingClassFields:
 checking_class_variable_object_one = UsingClassFields()
 checking_class_variable_object_two = UsingClassFields()
 
-print(checking_class_variable_object_one.class_count)
+print(UsingClassFields.get_class_count())
+
+"""
+Another type of method we can use is the static method. These methods are useful when you want to attach some
+kind of functionality to your objects, but you don't need to interact with any properties of the object or class.
+Essentialy, this means that a static method does NOT implicitly pass in the object calling the method as the first
+argument
+"""
+
+
+class UsingStaticMethods:
+    def __init__(self, my_field):
+        self.my_field = my_field
+
+    @staticmethod
+    def this_is_my_static_method():
+        print("this is my static method")
+
+
+my_static_example = UsingStaticMethods("this is a string")
+
+my_static_example.this_is_my_static_method()
+
+UsingStaticMethods.this_is_my_static_method()
