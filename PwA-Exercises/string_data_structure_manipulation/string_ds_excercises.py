@@ -7,7 +7,16 @@ phrase = "This is my test phrase."
 
 
 def make_snake_case(words: str):
-    pass
+    individual_substrings = words.split()
+    result = ""
+    print(individual_substrings)
+    for substring in individual_substrings:
+        print(result)
+        result += substring.lower() + "_"
+        # += is shorthand for result = result + substring.lower() + "_"
+        print(result)
+    return result.strip("._")
+
 
 
 def make_camelCase(words: str):
@@ -20,7 +29,6 @@ def make_SCREAMING_SNAKE_CASE(words: str):
 
 def make_PascalCase(words: str):
     pass
-
 
 print(make_snake_case(phrase))
 print(make_camelCase(phrase))
