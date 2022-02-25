@@ -1,4 +1,5 @@
 """This module contains introductory testing information and a basic app designed using Test Driven Development"""
+import numbers
 from abc import ABC, abstractmethod
 
 """
@@ -54,16 +55,41 @@ class so that we are ready to go AFTER we have created our tests
 
 class CalculatorImplementation(CalculatorInterface):
 
-    def addition(self, number_one, number_two)
-        # this method should only work with integers: we don't want to mess with fractions or anything else
-        # also, it should only work with positive numbers
-        pass
+    # these methods should only work with integers: we don't want to mess with fractions or anything else
+    # also, it should only work with positive numbers
+    def addition(self, number_one, number_two):
+        if isinstance(number_one, int) and isinstance(number_two, int): # this line is checking the input types
+            if number_one > 0 and number_two > 0: # this line checks that we are working with positive numbers
+                return number_one + number_two
+            else:
+                return "bad input: please only enter whole positive numbers" # this is returned if we have a 0 or less input
+        else:
+            return "bad input: please only enter whole positive numbers" # this returns if we have non integer data types
 
     def division(self, number_one, number_two):
-        pass
+        try:
+            if isinstance(number_one, int) and isinstance(number_two, int):  # this line is checking the input types
+                # our business rules state we should not allow 0 values, but here I will to show testing for exception handling
+                if number_one >= 0 and number_two >= 0:  # this line checks that we are working with positive numbers
+                    return number_one / number_two
+                else:
+                    return "bad input: please only enter whole positive numbers"  # this is returned if we have a 0 or less input
+            else:
+                return "bad input: please only enter whole positive numbers"  # this returns if we have non integer data types
+        except ZeroDivisionError:
+            return "You can't divide by zero"
 
+    # you need to work with floats to round your number, so it is ok for this method to receive fraction input, and
+    # to take it a step further, we don't want whole numbers to be allowed in the method
     def round(self, number):
-        pass
+        if isinstance(number, float):  # this line is checking the input types
+            if number > 0:  # this line checks that we are working with positive numbers
+                return round(number)
+            else:
+                return "bad input: please only enter mixed positive numbers"
+        else:
+            return "bad input: please only enter mixed positive numbers"
+
 
 """
 Now that we have our skeleton to work with, we can start crafting our tests: see module called test_calculator inside
