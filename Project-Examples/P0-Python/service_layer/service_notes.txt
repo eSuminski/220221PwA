@@ -1,0 +1,14 @@
+Since my DAL is going to handle the basic CRUD operations, since it is my DAL that specifically interacts with
+my database, I will use my service layer to handle actually implementing my user stories.
+
+For this example project I will be using the following user stories:
+
+As a user I want to be able to add a team to the database so I can always see its information
+As a user I want to be able to see team information so I can be reminded of it
+as a user I want to be able to update team information so I can correct it when need be
+As a user I want to be able to remove team information so I can adjust the list if a team leaves the league
+
+As a user I want to be able to add players to the database so everyone can see their information
+As a user I want to be able to see player information because I think their information is cool
+As a user I want to be able to update player information because players change teams and names
+As a user I want to be able to remove player information because sometimes they retire

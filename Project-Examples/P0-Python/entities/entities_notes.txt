@@ -1,0 +1,2 @@
+I am going to start this process by first deciding what kind of information my code needs, at a minimum, to handle
+all my users' requests to my application

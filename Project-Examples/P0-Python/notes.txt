@@ -1,0 +1,19 @@
+REMINDER: this is just a basic example of how to create a 3-tiered web application. Just copying and pasting this
+information into your own project will not work: you must adjust it to meet the requirements of your own
+projects.
+
+In this example, I will be creating a basic basketball fan application, where people can add player and team
+information into a central database, and also view that information.
+
+
+
+
+api_layer: this will hold code for my api
+
+service_layer: this will hold code for my service logic
+
+dal_layer: this will hold code for interacting with my database
+
+entities: this will hold my custom class code for any entities I need to work with
+
+tests: this will hold all my tests (will be using pytest for TDD)

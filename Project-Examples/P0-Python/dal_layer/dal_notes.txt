@@ -1,0 +1,5 @@
+For my fan application, I am going to stick with the basic CRUD operations
+Create
+Read
+Update
+Delete
