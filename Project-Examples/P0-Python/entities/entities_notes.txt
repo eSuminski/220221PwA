@@ -1,2 +1,8 @@
 I am going to start this process by first deciding what kind of information my code needs, at a minimum, to handle
 all my users' requests to my application
+
+Business Rules:
+Team:
+    Teams may not have the same name
+    Teams may not be located in the same city
+    Teams may not have duplicate Ids
