@@ -6,3 +6,7 @@ Team:
     Teams may not have the same name
     Teams may not be located in the same city
     Teams may not have duplicate Ids
+
+Players:
+    Players may not have duplicate Ids
+    Players on the same team may not have duplicate Jersey numbers
