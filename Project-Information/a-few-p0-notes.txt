@@ -1,0 +1,29 @@
+Here are a few notes for your project:
+
+1. for your entities, please make sure they, at minimum, include the following:
+
+customer/user: Id, Name
+
+accounts: id, balance, customer_id
+
+2. You may choose how you wish to implement the functionality/user stories for this project
+
+example: both options below for implementing withdrawing/depositing money are acceptable (just make sure
+in your actual project that you inlcude data validation in your service layer)
+
+
+def service_deposite_withdraw(self, transcation_type:str, value, account_id):
+	if transaction_type == "deposite":
+		return self.dao.deposite_method(value, account_id)
+	elif transaction_type == "withdraw":
+		return self.dao.withdraw_method(value, account_id)
+
+def service_deposite(value, account_id):
+	return dao.deposite_method(value, account_id)
+
+def service_withdraw(value, account_id):
+	return dao.withdraw_method(value, account_id) 
+
+3. DO NOT START IMPLEMENTING YOUR INTERFACES UNTIL YOU HAVE WRITTEN YOUR UNIT TESTS
+
+4. I can not stress this enough, DO NOT START IMPLEMENTING YOUR INTERFACES UNTIL YOU HAVE WRITTEN YOUR UNIT TESTS
