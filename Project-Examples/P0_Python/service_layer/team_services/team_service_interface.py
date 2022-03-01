@@ -1,13 +1,9 @@
 from abc import ABC, abstractmethod
 
-from dal_layer.team_dao.team_dao_interface import TeamDAOInterface
 from entities.team_class_information import Team
 
 
 class TeamServiceInterface(ABC):
-
-    def __init__(self, team_dao: TeamDAOInterface):
-        self.team_dao = team_dao
 
     # create
     @abstractmethod

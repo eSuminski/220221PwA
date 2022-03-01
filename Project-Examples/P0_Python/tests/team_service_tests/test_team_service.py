@@ -91,7 +91,7 @@ def test_check_no_duplicate_cities_update_team():
 
 def test_catch_non_string_city_update_team():
     try:
-        team_service.service_update_team_by_id(non_string_team_name_update)
+        team_service.service_update_team_by_id(non_string_city_name_update)
         assert False
     except BadTeamInfo as e:
         assert str(e) == "Please pass in a valid city name"
