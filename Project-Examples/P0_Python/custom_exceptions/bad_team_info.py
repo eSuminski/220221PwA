@@ -1,0 +1,2 @@
+class BadTeamInfo(Exception):
+    pass

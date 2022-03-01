@@ -5,11 +5,14 @@ from entities.team_class_information import Team
 
 class TeamDAOImp(TeamDAOInterface):
 
-    teams_list = []
-    id_generator = 2
+    # teams_list = []
+    # id_generator = 2
 
     def __init__(self):
         team_needed_for_id_catch = Team(1, "Pistons", "Fort Wayne")
+        self.teams_list = []
+        self.id_generator = 2
+
         self.teams_list.append(team_needed_for_id_catch)
 
     def create_team(self, team: Team)-> Team:
