@@ -596,6 +596,27 @@ try:
 except MyException as e: # e is the identifier: makes it easier to read/work with the exception
     print(e.message) # this prints the message to the console
 ```
+## PyPi & Pip
+PyPi is a package repository for Python that anyone can access and upload to. It is incredibly useful: the wide bredth of packages available almost guarantees that someone has developed some code to fulfill a need you have. It won't create your code for you, but it will save you the hassel of needing to implement EVERYTHING for yourself. You can access the PyPi repository by using a dependency manager like Pip. If you download Python from the main website then you get pip as well (note: Python does not NATURALLY come with pip, it is simply provided for you by the main python website as a curtesy). To download a package from Pypi you use the phrase "pip install package_name_here". Pypi includes the names you need to download packages in its repo.
+## Venv
+Do enough coding in Python and you will find your computer filling up with packages from PyPi you no longer need. To avoid the need of constantly cleaning up unused packages you can make use of a Virtual Environment. Some IDEs like pycharm will automatically create and activate a virtual enviornment for you when you create a project, but you might not always have access to such IDEs, or the venv may be deactivated for some reason. You can manually create a venv by using the following command: 
+```cli
+py -m venv /path/to/new/virtual/environment/from/current/directory
+```
+Then, once it has been created, you can activate it by running the activate file (avtivate.bat on linux):
+```cli
+. <venv_path>\Scripts\activate
+```
+Once you have activated the venv any pip installs will be installed here instead of your local site-packages folder. Here is an example of downloading a joke generator and using it (it assumes you have created and started the virtual enviornment):
+```cli
+pip install joke-generator
+```
+```python
+from joke_generator import generate
+
+print(generate()) # will print a joke
+```
+final note: depending on the ide you use, it may not recognize your pip installations. In those cases you just need to make sure your spelling is correct, because it will not provide you with intelisense
 ## Unit Testing(TDD)
 Testing has become a common practice in the field of software development: there are many different kinds of tests, but we will focus here on one of the most basic tests: the unit test. A unit test is a hallmark of a design philosophy called Test Driven Development (TDD). When doing TDD there is a workflow you follow:
 1. create interface

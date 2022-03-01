@@ -27,3 +27,6 @@ def service_withdraw(value, account_id):
 3. DO NOT START IMPLEMENTING YOUR INTERFACES UNTIL YOU HAVE WRITTEN YOUR UNIT TESTS
 
 4. I can not stress this enough, DO NOT START IMPLEMENTING YOUR INTERFACES UNTIL YOU HAVE WRITTEN YOUR UNIT TESTS
+
+5. Your CRUD methods (creating, reading/selecting, updating, deleting) are the only methods you need inside of your DAL. Your service layer is where you will
+want to put the suggested methods provided with the required user stories, which can call your CRUD methods in your DAL to manipulate your database
