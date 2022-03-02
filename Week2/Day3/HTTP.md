@@ -40,3 +40,13 @@ All HTTP requests have 5 parts to them:
         - this could mean they sent the wrong data, or they made an HTTP requet to the wrong location, etc.
     - 500 this is the failuer level for the web server
         - this is not a failure of the requester, but a failure of the developer.
+
+### JSON
+Javascript Object Notation is the most common way that data is transfered accross the web. Essentially, JSONs are formatted strings that work in key:value pairs. JSONs support three different data types: strings, numbers, and booleans. The reason JSons are so popular is because they are easy for just about every programming language to parse.
+```json
+{
+    "name":"Eric Suminski",
+    "profession": "Trainer",
+    "Fun Fact": "I can't touch my left shoulder with my left hand"
+}
+```
