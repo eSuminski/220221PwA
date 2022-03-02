@@ -11,6 +11,14 @@ business logic:
     Players may not have the same jersey number on the same team ( this will be handled in the service layer )
 """
 
+"""
+The tests in this module were crafted to check two things:
+
+1. when the correct data is provided to the method, the method returns the expected return value
+
+2. when the data you want to work with does not exist, a message indicating it does not exist should be returned
+"""
+
 
 def test_create_player_success():
     test_player = Player(0,1,"New","Player",10)
@@ -19,6 +27,7 @@ def test_create_player_success():
 
 
 def test_catch_non_unique_id():
+    """because my database handles the ID, I need to check that providing an ID does not ruin the method"""
     test_player = Player(1,1,"Bad","Id",0)
     result = player_dao.create_player(test_player)
     assert result.player_id != 1

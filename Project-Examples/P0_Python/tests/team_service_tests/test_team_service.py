@@ -3,6 +3,11 @@ from dal_layer.team_dao.team_dao_imp import TeamDAOImp
 from entities.team_class_information import Team
 from service_layer.team_services.team_service_imp import TeamServiceImp
 
+"""
+Because I need to work with so many different teams that have some kind of bad data I have decided to pre-make these
+objects in my code. This way I can call the specific object that I need for my test when necessary
+"""
+
 team_dao = TeamDAOImp()
 team_service = TeamServiceImp(team_dao)
 duplicate_team_name = Team(0, "Pistons", "city name is fine")
@@ -20,6 +25,13 @@ business logic:
     Teams may not have the same name
     Teams may not be located in the same city
     Teams may not have duplicate Ids (this is handled in the DAL)
+"""
+
+"""
+In these tests I am trying to think of the different ways that my team data needs to be verified, and for each way
+I am writing a test to ensure that my methods, when implemented, will actually perform the necessary validation on 
+the data. In particular, these tests are making sure that my Business Rules are being followed, and that the correct
+data types are being used for each part of the team data.
 """
 
 

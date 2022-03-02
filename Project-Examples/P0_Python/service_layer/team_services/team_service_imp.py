@@ -3,6 +3,16 @@ from dal_layer.team_dao.team_dao_interface import TeamDAOInterface
 from entities.team_class_information import Team
 from service_layer.team_services.team_service_interface import TeamServiceInterface
 
+"""
+This module implements the Team service interface. Here is where we define HOW the data being worked with is validated,
+and we define what needs to happen if the data is NOT validated. This could be because the data type provided is wrong,
+Business Rules are not being adhered to, or any other reason why the data should not be passed into the Data Access 
+Layer.
+
+Another thing to note is that it is ok if there is overlap in the names of the different methods between the service
+layer and the data access layer, but the ideal is that your method names in your service layer should reflect the
+particular user story that they are meant to implement.
+"""
 
 class TeamServiceImp(TeamServiceInterface):
 

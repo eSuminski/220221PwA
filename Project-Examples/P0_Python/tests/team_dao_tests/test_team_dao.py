@@ -10,7 +10,15 @@ create team tests
 business logic:
     Teams may not have the same name ( this will be handled in the service layer )
     Teams may not be located in the same city ( this will be handled in the service layer )
-    Teams may not have duplicate Ids (will handle this hear because it directly relates to the database)
+    Teams may not have duplicate Ids (will handle this here because it directly relates to the database)
+"""
+
+"""
+The tests in this module were crafted to check two things:
+
+1. when the correct data is provided to the method, the method returns the expected return value
+
+2. when the data you want to work with does not exist, a message indicating it does not exist should be returned
 """
 
 
@@ -21,6 +29,7 @@ def test_create_team_success():
 
 
 def test_catch_non_unique_id():
+    """because my database handles the ID, I need to check that providing an ID does not ruin the method"""
     test_team = Team(1, "Lakers", "L.A.")
     result = team_dao.create_team(test_team)
     assert result.team_id != 1
