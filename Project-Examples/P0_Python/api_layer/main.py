@@ -1,40 +1,34 @@
-"""this module contains the api for my application"""
-from flask import Flask, request
+"""This module contains the code for my api"""
 
-app: Flask = Flask(
-    __name__)  # passing __name__ as an argument lets the object know it should look for it's information in this module
+"""
+For this application I am going to be making a RESTful web service. REST stands for Representational State Transfer,
+and it is a popular way of structuring web application. RESTful webservice inputs (think HTTP Requests) and outputs
+(think HTTP Responses) are in a machine friendly format (think JSON). 
 
-my_list = ["I love my dog", "I ate fish for lunch today", "I wish I was still asleep"]
+There are 6 different constraints to restful web services that help to both guide your development process and that
+help you maintain a true RESTful web service.
 
-
-@app.route("/greeting", methods=["GET"])
-def hello_world():
-    return "Hello world!"
-
-
-@app.route("/personal/<name>", methods=["GET"])
-def personal_greeting(
-        name: str):  # ANYTHING that comes as a path parameter will be passed into your function as a string
-    return f"Hello {name}!"
-
-
-@app.route("/add/<num_one>/<num_two>", methods=["GET"])
-def addition_function(num_one: str, num_two: str):
-    result = int(num_one) + int(num_two)  # since these numbers are coming in as strings we need to type cast them
-    return str(result)  # we then need to typecast the number back into a string to return it to the requester
-
-
-@app.route("/list/<index>", methods=["GET"])
-def get_phrase_from_list(index: str):
-    global my_list
-    return my_list[int(index)]
-
-@app.route("/list", methods=["POST"])
-def add_phrase_to_list():
-    request_content = request.get_json() # this method turns our JSON into a python dictionary
-    global my_list
-    my_list.append(request_content["key"])
-    return "Phrase added successfully"
-
-
-app.run()
+1. Client-Server architecture
+    RESTful web services are not complete applications: they do not handle ANY client logic. Your RESTful web service
+    should not handle the creating of the request to your service, but it can handle the response for the request
+    that is made.
+    
+2. Stateless
+    RESTful web services do not keep track of clients: any tracking is handled client-side
+    
+3. Cacheable
+    information may be cached client side to speed up operations
+    
+4. Uniform Interface
+    Resources handled by a RESTful web service should easily be identified by the Uniform Resource Identifier
+    (URI) that is provided.
+    Example uniform URI: GET /customer/2/account/10 should get the information from account 10 belonging to customer
+    identified by the number 2
+    
+5. Layerd System
+    RESTful web services should be able to call other RESTful web services
+    
+6. (optional) Code on Demand
+    RESTful web services may return executable code. This is not a common practice, and so it is an optional
+    constraint
+"""

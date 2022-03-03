@@ -1,0 +1,2 @@
+class BadPlayerInfo(Exception):
+    pass
