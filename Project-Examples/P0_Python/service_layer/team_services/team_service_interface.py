@@ -20,7 +20,7 @@ class TeamServiceInterface(ABC):
 
     # read
     @abstractmethod
-    def service_get_team_information_by_id(self, team_id: int) -> Team:
+    def service_get_team_information_by_id(self, team_id: str) -> Team:
         """This method will validate a correct identifier is being used before passing it to the DAL"""
         pass
 

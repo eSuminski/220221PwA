@@ -72,12 +72,19 @@ select team test
 """
 
 
-def test_catch_non_numeric_id():
+def test_cant_typecast_to_int(): #because of the new features I need to add, I actually need to change this test
     try:
         team_service.service_get_team_information_by_id("one")
         assert False
     except BadTeamInfo as e:
         assert str(e) == "Please provide a valid team Id"
+
+def test_get_team_successfuly_typecast_string():
+    result = team_service.service_get_team_information_by_id("1")
+    assert result.team_id == 1
+
+
+# I also need to add a new test: validating that a string is successfully type casted into an int
 
 
 """
@@ -128,3 +135,6 @@ def test_catch_non_numeric_id_delete_team():
         assert False
     except BadTeamInfo as e:
         assert str(e) == "Please provide a valid team Id"
+
+
+

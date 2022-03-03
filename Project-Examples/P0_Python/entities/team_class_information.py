@@ -6,6 +6,13 @@ class Team:
         self.team_name = team_name
         self.home_city = home_city
 
+    def convert_to_dictionary(self):
+        return {
+            "teamId": self.team_id,
+            "teamName": self.team_name,
+            "homeCity": self.home_city
+        }
+
 
 
 

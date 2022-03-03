@@ -33,10 +33,10 @@ class TeamServiceImp(TeamServiceInterface):
                     "This city name already exists in the database")  # raise exception if their are duplicates
         return self.team_dao.create_team(team)  # assuming all validation checked out, we pass data into DAL
 
-    def service_get_team_information_by_id(self, team_id: int) -> Team:
-        if type(team_id) == int:
-            return self.team_dao.get_team_information_by_id(team_id)
-        else:
+    def service_get_team_information_by_id(self, team_id: str) -> Team:
+        try:
+            return self.team_dao.get_team_information_by_id(int(team_id))
+        except ValueError:
             raise BadTeamInfo("Please provide a valid team Id")
 
     def service_update_team_by_id(self, team: Team) -> Team:
