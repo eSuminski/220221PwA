@@ -1,0 +1,5 @@
+1. git add . (this preppares all your new files to be committed)
+
+2. git commit -m "your message" (commits the files, giving you a rollback point)
+
+3. git push (pushes your files to your github repo)
