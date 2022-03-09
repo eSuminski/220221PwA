@@ -1,5 +1,5 @@
 """This module has basic stubbing information and examples"""
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, patch
 
 """
 You can ask 10 different developers what stubbing and you will get 10 different answers. For our purposes, when I talk
@@ -11,7 +11,7 @@ useful when writing unit tests for service layers of web applications that are c
 class Divider:
     def division(self, num):
         # because my division method is not implemented correctly, integration tests wil fail
-        return "this will not give me a remainder"
+        return num/2
 
 
 class Calculator:
@@ -19,10 +19,13 @@ class Calculator:
         self.divider_object: Divider = divider_obj
 
     def even_odd_check(self, num):
-        if self.divider_object.division(num) % 2 == 0:
-            return "Even"
-        else:
-            return "Odd"
+        try:
+            if self.divider_object.division(num) % 2 == 0:
+                return "Even"
+            else:
+                return "Odd"
+        except ZeroDivisionError as e:
+            return "You can't divide by 0, please try again"
 
 divider = Divider()
 calculator = Calculator(divider)
@@ -56,3 +59,24 @@ def test_get_odd_stubbing():
     calculator.divider_object.division = MagicMock(return_value=5)
     result = calculator.even_odd_check(423048)
     assert result == "Odd"
+
+"""
+Sometimes you will need to stub an exception in your code: in these instances you need to make use of the 
+patch annotation, and you need to pass a mock object (provided by the patch annotation) into your test
+"""
+@patch("stubs_and_mocks.Divider.division")
+def test_get_zero_division_message(mock):
+    mock.side_effect = ZeroDivisionError() # use .side_effect = Exception() to actually raise the exception you want
+    result = calculator.even_odd_check(10) #number does not matter: when the division method is called it will raise our ZeroDivisionError Exception
+    assert result == "You can't divide by 0, please try again"
+
+"""
+so far we have been stubbing our methods, however, we sometimes will need to test not the results of a method, but
+the inputs, or path of execution, to the method. In these cases we want to do mocking
+"""
+
+def test_make_sure_input_gets_to_division_method():
+    calculator.divider_object.division = MagicMock(return_value=5) # it is good practice to return the expected value
+    calculator.even_odd_check(10)
+    calculator.divider_object.division.assert_called_with(10)
+

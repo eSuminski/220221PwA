@@ -96,10 +96,12 @@ def test_cant_typecast_to_int():  # because of the new features I need to add, I
 """
 I will come back to this to see why my stubbed result is not giving me my expected value
 """
-# def test_get_team_successfuly_typecast_string():
-#     team_service.team_dao.get_team_information_by_id = MagicMock(result_value=Team(1, "irrelevant", "irrelvant"))
-#     result = team_service.service_get_team_information_by_id("1")
-#     assert
+
+
+def test_get_team_successfuly_typecast_string():
+    team_service.team_dao.get_team_information_by_id = MagicMock(result_value="just need to call method")
+    result = team_service.service_get_team_information_by_id("1")
+    team_service.team_dao.get_team_information_by_id.assert_called_with(1)
 
 
 """
@@ -163,3 +165,9 @@ def test_catch_non_numeric_id_delete_team():
         assert False
     except BadTeamInfo as e:
         assert str(e) == "Please provide a valid team Id"
+
+
+def test_pass_int_into_delete_method():
+    team_service.team_dao.delete_team_by_id = MagicMock(return_value="just need to check int was used")
+    team_service.service_delete_team_by_id("1")
+    team_service.team_dao.delete_team_by_id.assert_called_with(1)
