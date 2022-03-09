@@ -1,3 +1,4 @@
+from custom_exceptions.bad_team_info import BadTeamInfo
 from custom_exceptions.id_not_found import IdNotFound
 from dal_layer.team_dao.team_dao_interface import TeamDAOInterface
 from entities.team_class_information import Team
@@ -5,6 +6,19 @@ from util.postgres_connection import connection
 
 
 class TeamDAOImpPostgres(TeamDAOInterface):
+
+    def get_all_teams_information(self):
+        sql = "select * from teams"
+        cursor = connection.cursor()
+        cursor.execute(sql)
+        team_records = cursor.fetchall()
+        team_list = []
+        if len(team_records) == 0:
+            return team_list
+        else:
+            for team in team_records:
+                team_list.append(Team(*team))
+            return team_list
 
     def create_team(self, team: Team) -> Team:
         sql = "insert into teams values(default, %s, %s) returning team_id"

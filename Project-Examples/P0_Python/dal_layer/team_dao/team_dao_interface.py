@@ -23,6 +23,11 @@ class TeamDAOInterface(ABC):
         """this method will be used to handle retrieving new team data from my database"""
         pass
 
+    @abstractmethod
+    def get_all_teams_information(self):
+        """will be used to perform data validation"""
+        pass
+
     # update
     @abstractmethod
     def update_team_by_id(self, team: Team)-> Team:

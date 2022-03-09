@@ -1,4 +1,7 @@
 """This module contains team dao unit tests"""
+from unittest.mock import MagicMock, patch
+
+from custom_exceptions.bad_team_info import BadTeamInfo
 from custom_exceptions.id_not_found import IdNotFound
 from dal_layer.team_dao.team_dao_postgres import TeamDAOImpPostgres
 from entities.team_class_information import Team
@@ -90,3 +93,19 @@ def test_delete_team_with_non_existant_id():
         assert False
     except IdNotFound as e:
         assert str(e) == "No team matches the id given: please try again!"
+
+
+def test_get_all_teams_success():
+    result = team_dao.get_all_teams_information()
+    assert len(result) >= 1
+
+
+@patch("dal_layer.team_dao.team_dao_postgres.TeamDAOImpPostgres.get_all_teams_information")
+def test_no_teams_found(mock):
+    """this is not actually testing my method, just raising an exception and catching it in the except block"""
+    try:
+        mock.side_effect = BadTeamInfo("No teams were found")
+        team_dao.get_all_teams_information()
+        assert False
+    except BadTeamInfo as e:
+        assert str(e) == "No teams were found"
