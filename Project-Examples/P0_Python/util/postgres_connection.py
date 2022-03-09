@@ -1,5 +1,7 @@
 import os
 
+from psycopg import connect, OperationalError
+
 
 def create_connection():
     try:

@@ -1,9 +1,9 @@
 """This module contains team dao unit tests"""
 from custom_exceptions.id_not_found import IdNotFound
-from dal_layer.team_dao.team_dao_imp import TeamDAOImp
+from dal_layer.team_dao.team_dao_postgres import TeamDAOImpPostgres
 from entities.team_class_information import Team
 
-team_dao = TeamDAOImp()  # I will be using this team dao object for all my team dao unit tests
+team_dao = TeamDAOImpPostgres()  # I will be using this team dao object for all my team dao unit tests
 
 """
 create team tests
@@ -25,6 +25,7 @@ The tests in this module were crafted to check two things:
 def test_create_team_success():
     test_team = Team(0, "Trail Blazers", "Portland")
     result = team_dao.create_team(test_team)
+    print(result.team_id)
     assert result.team_id != 0
 
 
