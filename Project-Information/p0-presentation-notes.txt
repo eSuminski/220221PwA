@@ -1,0 +1,9 @@
+1. share github repo link
+
+2. show off unit tests (run them all together if you can)
+
+3. show off API using Postman (run them all together using test feature if you can)
+
+4. take questions
+
+(make sure to describe what your application is doing at each step) 
