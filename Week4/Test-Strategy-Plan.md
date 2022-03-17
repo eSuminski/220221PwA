@@ -17,9 +17,8 @@ The test plan document is a project specific set of rules and practices to follo
 
 ### Some terminology
 
-Test cases:
-    - test cases are singular tests
-Test suite:
-    - a collection of test cases
-Test results:
-    - a collection of test case results
+Test cases: test cases are singular tests
+
+Test suite: a collection of test cases
+
+Test results: a collection of test case results
