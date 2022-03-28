@@ -1,0 +1,57 @@
+<!-- to easily generate a starting html template use the ! character to have vsc generate it for you -->
+<!DOCTYPE html> <!--by default, your browser will assume an html file is HTML5-->
+<html lang="en"> <!--Everyting you want in your webpage needs to go inside these html tags-->
+<head> <!--This section of the html file usually contains meta data and links to other resources-->
+    <title>My personal web page</title>
+</head>
+<body> <!--the meat of our file: this is where we will put the content we want to show on our web page-->
+    
+    <!-- Some elements are block elements: these elements will render on top of one another -->
+    <h1>This is my big header!</h1><h6>This is my little header!</h6>
+
+    <!-- These input elements are inline elements: they will naturally go side by side -->
+    <!-- tags can have attributes inside of them: these attributes affect the way the browser renders them, and how users interact with them -->
+    <input type="text">
+    <input type="number">
+    <!-- if I wanted to have each input on a seperate line in my browser I could use the <br> element -->
+    <br>
+    <!-- the img tag can be used to embbed pictures into your web page -->
+    <img src="baby-husky.jpg" alt="can't find the picture!">
+
+    <!-- there are two basic lists you can create: ordered and unordered -->
+
+    <ol> <!--an ordered list will number your list elements-->
+        <li>Dog</li>
+        <li>Cat</li>
+        <li>Fish</li>
+        <li>Tiger</li>
+    </ol>
+
+    <ul> <!-- an unordered list will not number your elements-->
+        <li>Dog</li>
+        <li>Cat</li>
+        <li>Fish</li>
+        <li>Tiger</li>       
+    </ul>
+
+    <!-- the button element is a useful way of letting your user confirm all information provided is correct, or performing some other action -->
+    <button onclick="alert('This alert pops up when you click the button')">click me to get a popup!</button>
+
+    <!-- Tables are useful elements for displaying lots of data -->
+    <table>
+        <thead> <!--this is where the column names are identified-->
+            <tr>
+                <th>column one</th><th>column two</th><th>column three</th>
+            </tr>
+        </thead>
+        <tbody> <!--this is where the rows of data will be placed-->
+            <tr>
+                <td>1</td><td>2</td><td>3</td>
+            </tr>
+            <tr>
+                <td>one</td><td>two</td><td>three</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

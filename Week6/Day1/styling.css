@@ -1,0 +1,7 @@
+h3 {
+    color:blue;
+}
+/* 
+    this is a handy way to keep your html file clean looking, by storing the styling information in a seperate file
+    Be carefule though: any inline or internal styling in the html file will override the styling here
+*/

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS basics</title>
+    <style>
+        /* this styling is applied to the whole file, but is overridden by any inline styling */
+        h1 {
+            color: yellow;
+        }
+        p {
+            text-align: right;
+            color: #008000;
+        }
+    </style>
+    <link rel="stylesheet" href="styling.css"><!--this tells your browser where to look for the styling information it needs-->
+</head>
+<body>
+    <!-- to make this header actually centered and red I need to use Cascading Style Sheet (CSS) -->
+
+    <!-- the example below is inline styling: this is when you have a style attribute that dictates the styling in line -->
+    <h1 style="text-align: center; color: red;">I want this header to be red and centered</h1>
+    <h1>this is going to be left aligned and yellow</h1>
+    <!-- another way to stylize your element is to use a styling tag in the head -->
+    <p>I want this paragraph <i>element</i> to be right aligned and green</p>
+
+    <!--you can also get your css from an external css file-->
+    <h3>this element recieves its styling from a css file that is located elsewhere</h3>
+
+</body>
+</html>
