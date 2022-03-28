@@ -210,13 +210,17 @@ create table first_nf(
 	job varchar(50) primary key,
 	first_name varchar(50),
 	last_name varchar(50),
-	job_title varchar(50)
+	job_title varchar(50),
+	spouse_first_name varchar(50),
+	married boolean
 );
 --this is 1NF plus it removed the composite key, so all columns reference a single primary key. This is 2NF
 create table second_nf(
 	person_id serial primary key,
 	first_name varchar(50),
 	last_name varchar(50)
+	spouse_first_name varchar(50),
+	married boolean
 );
 --this is 2NF, but the total cost column is unneccessary, since we could get it from items purchased and item price. It is transitive
 create table not_third_nf(
