@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pokedex</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        /* the style information below will make it so only h3 elements with the id of context get this styling */
+        h3#context { 
+            text-align: center;
+        }
+        /* I don't NEED to put the element the id is attached to to give the element with the id any styling */
+        #idContainer{
+            text-align: center;
+        }
+        .capitalize{
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <!-- First thing we need to do is create the framework for our web page -->
+    <h1>Welcome to the Pokedex!</h1>
+    <h3 id="context">Enter a pokemon id below and I will pull up that pokemon's information!</h3>
+    <div id="idContainer">
+        <input type="number" placeholder="Enter id here!" id="pokeId">
+        <button id="searchButton" onclick="getPokemon()">Search for Pokemon!</button>
+    </div>
+
+    <!-- Now that the static content is in place, we need to set up the elements that will dynamically be generated for us -->
+    <!-- 
+        what we need: 
+        display pokemon name *
+        display pokemon pictures*
+        display pokemon types*
+        display pokemon moves*
+    -->
+
+    <!-- name goes here ***** -->
+    <h3 id="pokeName" class="capitalize"></h3>
+
+    <!-- pictures go here *****-->
+    <p id="imagesHeader" class="capitalize"></p>
+    <div id="pokeImages" class="capitalize">
+
+    </div>
+
+    <!-- types go here ***** -->
+    <p id="typesHeader" class="capitalize"></p>
+    <ul id="poketypes" class="capitalize">
+
+    </ul>
+
+    <!-- moves go here -->
+    <p id="movesheader" class="capitalize"></p>
+    <ul id="pokeMoves" class="capitalize">
+
+    </ul>
+
+    
+</body>
+<script>
+    // static content
+    const pokeId = document.getElementById("pokeId");
+    const searchButton = document.getElementById("searchButton");
+
+    // dynamic content
+    const pokeName= document.getElementById("pokeName");
+    const imagesHeader = document.getElementById("imagesHeader");
+    const pokeImages = document.getElementById("pokeImages");
+    const typesHeader = document.getElementById("typesHeader");
+    const poketypes = document.getElementById("poketypes");
+    const movesheader = document.getElementById("movesheader");
+    const pokeMoves = document.getElementById("pokeMoves");
+
+    const pokeURL = "https://pokeapi.co/api/v2/pokemon/"
+
+    async function getPokemon(){
+        let response = await fetch(pokeURL + pokeId.value); // the value of the "value" attribute is whatever you enter into the input
+        if(response.status === 200){
+            const pokemon = await response.json(); // this turns the json in the response into a JS object
+            console.log(pokemon);
+            populatePokemonData(pokemon);
+        } else {
+            alert("it got away!");
+        }
+    }
+
+    function populatePokemonData(pokemon){
+        // first we need to fill the pokeName header element
+        pokeName.textContent = pokemon.name;
+
+        // next let's add the pokemon sprites to the webpage
+        imagesHeader.textContent = `${pokemon.name} images` // remember to use back tics if you want to do string interpolation here
+        pokeImages.innerHTML = ""; // this will make sure any images already present are first removed before adding the new pokemon images
+        for(let key in pokemon.sprites){// this will loop us through the keys of the sprites object
+            if(key != "other" & key != "versions"){ // this makes sure we don't get non-image related objects in our loop
+                if(pokemon.sprites[key]){ // here we make use of truthy falsey to only interact with keys that have an associated image
+                    const picture = document.createElement("img"); // we create an image element
+                    picture.src = pokemon.sprites[key]; // we set the string of the image link as the value of the src attribute of the image
+                    pokeImages.appendChild(picture); // we append the img element inside our image container
+                }
+            }
+        }
+
+        // next we add the pokemon types to the webpage
+        typesHeader.textContent = `${pokemon.name} types`; // make the pokemon name in this p element correct
+        poketypes.innerHTML = ""; // remove any previous pokemon types appended in this unordered list
+        for(let index in pokemon.types){// now the fun part: we are iterating through the array that contains type information
+            // console.log(pokemon.types[index].type.name); // this console log is here to check that we are actually getting the type
+            const itemElement = document.createElement("li"); // here we create a li that we will append in the ul for types
+            itemElement.textContent = pokemon.types[index].type.name; // we assign the value for the type name as the text content of our newly created list item
+            poketypes.appendChild(itemElement); // append that li to the ul, and repeat for each type
+        }
+
+        // lastly, we need to add the pokemon moves
+        movesheader.textContent = `${pokemon.name} moves`;
+        pokeMoves.innerHTML = ""; // make sure the old moves are removed so the new ones take their place
+        for(let element of pokemon.moves){ // we need to iterate through the pokemon moves array
+            // console.log(element.move.name); // this is just to make sure we actually are getting the name of the moves
+            const itemElement = document.createElement("li"); // create our list item element
+            itemElement.textContent = element.move.name; // set its text to be the move
+            pokeMoves.appendChild(itemElement); // append the move to the pokemoves unordered list
+        }
+    }
+
+
+
+</script>
+</html>
