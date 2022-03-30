@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>For Fetch</title>
+</head>
+<body>
+    
+    <input type="text" id="message" placeholder="Put a message in here">
+    <br>
+    <button onclick="addMessage()">click this to add your message to the message json</button>
+    <br>
+    <button onclick="sendMessage()">click this to send the message in your http request</button>
+    <br>
+    <input type="text" id="name" placeholder="Put a name in here">
+    <br>
+    <button onclick="getGreeting()">click me to get a personalized greeting for the name you entered above</button>
+
+</body>
+<script>
+
+    const messageInput = document.getElementById("message");
+    const nameInput = document.getElementById("name");
+
+    let messages = {1:"Message one", 2:"Message two"};
+    let messageNumber = 2;
+
+    function addMessage(){
+        messageNumber += 1;
+        messages[messageNumber] = messageInput.value;
+        console.log(messageInput.value)
+        messageInput.value = "";
+    }
+
+    async function sendMessage(){
+
+        let config = {
+            method:"POST",
+            headers:{'Content-Type':"application/json"},
+            body: JSON.stringify(messages)
+        }
+
+        const response = await fetch("http://localhost:5000/body", config);
+        if(response.status === 200){
+            message = await response.text();
+            alert(message);
+        } else {
+            alert("Oops");
+        }
+    }
+
+    async function getGreeting(){
+        const response = await fetch(
+            `http://localhost:5000/${nameInput.value}`,
+            {
+                method:"GET"
+            }
+        )
+        if(response.status == 200){
+            message = await response.json()
+            alert(message.message);
+        } else {
+            alert("Something went wrong, please try again");
+        }
+    }
+
+
+</script>
+</html>
