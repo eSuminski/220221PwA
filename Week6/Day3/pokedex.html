@@ -107,10 +107,10 @@
         // next we add the pokemon types to the webpage
         typesHeader.textContent = `${pokemon.name} types`; // make the pokemon name in this p element correct
         poketypes.innerHTML = ""; // remove any previous pokemon types appended in this unordered list
-        for(let index in pokemon.types){// now the fun part: we are iterating through the array that contains type information
+        for(let element of pokemon.types){// now the fun part: we are iterating through the array that contains type information
             // console.log(pokemon.types[index].type.name); // this console log is here to check that we are actually getting the type
             const itemElement = document.createElement("li"); // here we create a li that we will append in the ul for types
-            itemElement.textContent = pokemon.types[index].type.name; // we assign the value for the type name as the text content of our newly created list item
+            itemElement.textContent = element.type.name; // we assign the value for the type name as the text content of our newly created list item
             poketypes.appendChild(itemElement); // append that li to the ul, and repeat for each type
         }
 
