@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>One</title>
+</head>
+<body>
+    <input type="number" id="number">
+    <button onclick="transfer()">send info to page two</button>
+</body>
+<script>
+
+    const input = document.getElementById("number");
+
+    function transfer(){
+        // you could also use session storage to limit the existence of this information to the lifespan of the browser being opened
+        window.localStorage.setItem("number", input.value);
+        window.location.href = "two.html"
+    }
+
+</script>
+</html>
