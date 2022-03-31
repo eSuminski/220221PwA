@@ -1,6 +1,7 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.support.select import Select
 
 
 class WikiHome:
@@ -25,3 +26,14 @@ class WikiHome:
         # relative xpath to element: //*[@lang="it"]/a
         element: WebElement = self.driver.find_element(By.XPATH, "/html/body/div[2]/div[8]/a")
         return element
+
+    def search_bar(self):
+        return self.driver.find_element(By.ID,"searchInput")
+
+    def language_selector(self):
+        element: Select = Select(self.driver.find_element(By.ID,"searchLanguage"))
+        return element
+
+    def search_button(self):
+        return self.driver.find_element(By.XPATH,"/html/body/div[3]/form/fieldset/button")
+
