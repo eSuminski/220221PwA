@@ -1,0 +1,1 @@
+to generate the report from the run configuration you need to add --html=report_name.html --self-contained-html to the additional arguments line

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic Element Generation</title>
+</head>
+<body>
+    <table>
+        <thead id="head">
+
+        </thead>
+        <tbody id="body">
+
+        </tbody>
+    </table>
+</body>
+<script>
+    const myResponseObj = {
+        objectOne: {"one": 1,"two":2,"three":3},
+        objectTwo: {"one": "one","two":"two","three":"three"},
+        objectThree: {"one": true,"two":true,"three":false},
+    };
+
+    const head = document.getElementById("head");
+    const body = document.getElementById("body")
+
+    head.innerHTML = "<tr><th>One</th><th>Two</th><th>Three</th></tr>"
+
+    let idNum = 1;
+
+    for(let obj in myResponseObj){
+        console.log(myResponseObj[obj]);
+        const row = document.createElement("tr");
+        row.id = `row${idNum}`;
+        row.innerHTML = `<td id="keyOne${idNum}">${myResponseObj[obj].one}</td><td id="keyTwo${idNum}">${myResponseObj[obj].two}</td><td id="keyThree${idNum}">${myResponseObj[obj].three}</td>`;
+        idNum++;
+        body.appendChild(row);
+    }
+
+</script>
+</html>
