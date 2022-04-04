@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors</title>
+    <style>
+        /* element selector */
+        p {
+            color: red;
+        }
+
+        /* id selector */
+        #yellow{
+            color: yellow;
+        }
+
+        /* class selector */
+        .green{
+            color: green;
+        }
+
+        /* universal selector */
+        * {
+            text-align: center;
+        }
+
+        /* attribute selector */
+        [lang]{
+            color: purple;
+        }
+
+        /* you can group your selectors */
+        h2, h3 {
+            color: brown;
+        }
+
+        /* child selector will only apply styling to elements that are immediate children of the primary element */
+        /* div > p {
+            color: dodgerblue;
+        } */
+
+        /* descendant selector will apply styling to ALL elements contained within the parent, whatever level they are locted at */
+        div p{
+            color: dodgerblue;
+        }
+
+        /* general sibling selector applies to all siblings in the dom (unless the adjacent sibling styling is also used) */
+        h4 ~ h5 {
+            color: darkgreen;
+        }
+        /* adjacent sibling selector only applies to the first sibling in the dom*/
+        h4 + h5 {
+            color: darkslateblue;
+        }
+
+        /* psuedo element selector */
+        p:hover{
+            color: black;
+        }
+
+        /* psuedo class selector */
+        p::first-letter {
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <p>this element's text will be red</p>
+    <p id="yellow">this element's text will be yellow</p>
+    <p class="green">this element's text will be green</p>
+    <h1>this text should be centered</h1>
+    <h1 lang="en">I want this text to be purple</h1>
+    <h2>this will be brown</h2>
+    <h3>this will also be brown</h3>
+    <div>
+        <p>this will be dodgerblue</p>
+        <p>this will be dodgerblue</p>
+        <span>
+            <p>this will not be dodgerblue</p>
+        </span>
+    </div>
+    <h4>this should be only centered</h4>
+    <h5>this will be darkslateblue because we have the adjance sibling styling</h5>
+    <h5>this will be green because we have the general sibling styling</h5>
+    <p>this element will turn black when the mouse hovers over it</p>
+    <p>this element and other p elements will have the first letter color changed to white</p>
+    <p>I only want <Span style="color: pink;">THIS</Span> to be pink</p>
+</body>
+</html>
