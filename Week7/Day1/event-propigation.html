@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event Propigation</title>
+</head>
+<body>
+    <!-- by default, event propagation happens via bubbling: events propagte from the innermost elements to the outtermost elements -->
+    <!-- <div onclick="alert(`This is element ${this.tagName}`)">
+        <p onclick="alert(`This is element ${this.tagName}`)">
+            <a href="#" onclick="alert(`This is element ${this.tagName}`)">click me</a>
+        </p>
+    </div> -->
+
+    <!-- the example above without the script shows off bubbling, the example below with the script shows capturing -->
+
+    <div>
+        <p>
+            <a href="#">click me</a>
+        </p>
+    </div>
+</body>
+<script>
+    function showTagName(){
+        alert(`this is element ${this.tagName}`);
+    }
+
+    let elements = document.querySelectorAll("div, p, a");
+    for(let element of elements){
+        // addEventListener("event", function, boolean true IF you want capturing event propagation)
+        element.addEventListener("click", showTagName, true);
+    }
+</script>
+</html>
