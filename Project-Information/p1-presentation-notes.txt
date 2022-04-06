@@ -1,0 +1,9 @@
+Time: No more than 10 minutes
+
+1. show off unit tests (include postman routes)
+
+2. show off end to end tests
+
+3. walk through application
+
+4. show off documentation
