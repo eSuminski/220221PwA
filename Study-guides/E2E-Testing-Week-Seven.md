@@ -113,11 +113,11 @@
     - Utilize TDD to design app
 - Step 4: Create feature files for E2E tests
     - Step 4.1: Generate methods for Acceptance Criteria
-- Step 5: Create runner class to run your feature files
+- Step 5: Create environment module to set up driver and poms in your context object provided by Behave
 - Step 6: Create Page Object Models (poms) for required pages
-    - Don't forget to update your runner as you add more poms
-- Step 7: Create Step classes to implement your generated code stubs for your Acceptance Criteria 
+    - Don't forget to update your environment as you add more poms
+- Step 7: Implement steps generated for your Acceptance Criteria 
 - Step 8: Run your automated E2E tests!
 
 ## E2E example
-See Week6 Day4 file for examples of complete E2E tests
+See Week6 Day4 and Week7 Day6 for examples of complete E2E tests
