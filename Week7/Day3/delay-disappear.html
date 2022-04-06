@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Selenium Extras</title>
+</head>
+<body>
+    <button id="button" onclick="delayedAlert()">click me for a delayed alert</button>
+</body>
+<script>
+    const button = document.getElementById("button");
+
+    function delayedAlert(){
+        setTimeout(function(){
+            alert("this shows up after 3 seconds!")
+            button.style.visibility = "hidden";
+        },3000)
+    }
+</script>
+</html>
