@@ -121,3 +121,14 @@
 
 ## E2E example
 See Week6 Day4 and Week7 Day6 for examples of complete E2E tests
+
+## Business Rules
+You can think of business rules as the instructions for how your application is supposed to work. It's one thing to know your application should support logging in, it's another to know that the login should be handled by an employee Id and password, not custom username and password. So, the business rules are simply more detailed instructions on how the application should work
+
+## Happy vs Alternate path testing
+Happy path E2E testing is checking that, if all inputs are correct, things work as intended. Alternate path testing checks that, when inputs are incorrect (think a bad username or password) the situation is handled and an expected outcome happens (an alert pops up informing the user the login failed).
+
+## Implicit vs Explicit wait
+You can build wait times into your E2E tests in order to avoid flakey tests (tests that sometimes pass, sometimes fail). An implicit wait is set in the evironment module: it determines how long Selenium will wait for an element to be interactable before moving on to the next step (Behave will mark the step as failing if this occurs).
+
+An explicit wait, on the other hand, can be used to handle a variety of situations. For instance, a web element may, by design, take five seconds to render on the webpage. Using an implicit wait to handle this situaiton would make it so that EVERY element has 5 potential seconds to become interactable, which is not good for optimization, and has the potential to seriosuly slow down your automated tests. An explicit wait can be used in this situation instead by using the WebDriverWait class. You can determine the wait time, and what the explicit wait is actually waiting for (element is visibile, element can be interacted with, element is not present, etc). This gives you fine tune control over when Selenium should actually wait for an element to be present. Another common use is to use explicit waits to tell Selenium to wait for an expected condition, like the title of the web page changing. This helps prevent flakey tests from Selenium working faster than your browser, a common situation. 
