@@ -33,14 +33,14 @@ public class PlayersTests {
     @Test
     public void updatePlayerSuccess(){
         Player player = new Player(-2,"Brandon","names");
-        Player result = playerDAO.updatePlayerById(player);
-        Assert.assertEquals(result.getFirstName(),"Brandon");
+        int result = playerDAO.updatePlayerById(player);
+        Assert.assertTrue(result != 0);
     }
 
     @Test
     public void deletePlayerSuccess(){
-        boolean result = playerDAO.deletePlayerById(-3);
-        Assert.assertTrue(result);
+        int result = playerDAO.deletePlayerById(-3);
+        Assert.assertTrue(result != 0);
     }
 
 }

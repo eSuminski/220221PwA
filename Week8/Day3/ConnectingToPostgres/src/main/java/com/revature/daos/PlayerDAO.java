@@ -26,8 +26,8 @@ public interface PlayerDAO {
     List<Player> selectAllPlayers();
 
     // update player
-    Player updatePlayerById(Player player);
+    int updatePlayerById(Player player);
 
     // delete player
-    boolean deletePlayerById(int id);
+    int deletePlayerById(int id);
 }
