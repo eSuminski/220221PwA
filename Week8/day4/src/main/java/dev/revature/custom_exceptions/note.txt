@@ -1,0 +1,2 @@
+I recommend making all your custom exceptions unchecked: they are simpler to work with, and with a three tiered web
+app you already have baked-in infrastructure to handle the possible exceptions.
