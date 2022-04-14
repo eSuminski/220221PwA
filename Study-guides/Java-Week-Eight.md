@@ -51,6 +51,30 @@ public class myClass {
 - Encapsulation
     - classes can protect their behaviors and attributes by making them private and designating specific means of interacting with their content
     - this provides a level of protection for the class: it prevents unintentional interaction with class data
+## Operators
+```java
++ // addition
+- // subtraction
+/ // division
+* // multiplication
+% // modulus (the remainder in division)
+++ // increase value by 1
+-- // decrease value by 1
+
+// comparison operators return a True or False value
+
+== // equal to
+!= // not equal to
+> // greater than
+< // less than
+>= // greater or equal to
+<= // less than or equal to
+
+// logical operators are used further facilitate the comparison operators
+&& // logical and returns true of both statements are true
+|| // logical or returns true if one of the statements is true
+! // not operator reverses the desired outcome: will return false if the expression is true, and vice versa
+```
 ## methods & parameters
 ```java
 class myClass{
