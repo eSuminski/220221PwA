@@ -6,7 +6,7 @@ public class ExceptionChaining {
     public static void main(String[] args) {
         try{
             System.out.println("You can chain multiple catch blocks");
-        // you can have one catch block handle multiple exceptions, seperate the possible exceptions with a | character
+        // you can have one catch block handle multiple exceptions, separate the possible exceptions with a | character
         // you could also make multiple catch blocks if you want to handle exceptions in different ways
         } catch(Exception|Error e){
             System.out.println(e.getMessage());
