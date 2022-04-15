@@ -3,6 +3,7 @@
 ## Java Introduction
 - high level
     - automatic memory management (no developer pointers, garbage collection handled for you)
+    -  There is no explicit way to force garbage collection, but you are allowed to request it (System.gc(), Runtime.getRuntime().gc(), System.runFinalize())
 - compiled
     - source code is all compiled together and then it can be run
 - statically typed
