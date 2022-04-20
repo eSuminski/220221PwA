@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 public class WikiHome {
 
     private WebDriver driver;
+
+    // you can manually set the web elements you want to interact with by using the By class
     private By searchBar = By.id("searchInput");
     private By searchButton = By.className("pure-button");
 
@@ -28,7 +30,7 @@ public class WikiHome {
     @FindBy(xpath = "/html/body/div[2]/div[8]/a")
     public WebElement italian;
 
-    // you can also avoid using the page factory and manually search for the elements youtself
+    // you can also avoid using the page factory and manually search for the elements yourself
     public void sendKeysToSearchbar(String input){
         driver.findElement(searchBar).sendKeys(input);
     }

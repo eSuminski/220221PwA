@@ -10,6 +10,7 @@ public class WikiLinksSteps {
 
     @Given("I am on the Wikipedia home page")
     public void i_am_on_the_wikipedia_home_page() {
+        // this step, despite being used in multiple feature files, only needs to be defined once
         TestRunner.driver.get("https://www.wikipedia.org/");
     }
     @When("I click the English link")

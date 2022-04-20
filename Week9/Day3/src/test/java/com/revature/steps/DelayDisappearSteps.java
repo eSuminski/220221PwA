@@ -11,6 +11,7 @@ public class DelayDisappearSteps {
 
     @Given("I am on the delay-disappear page")
     public void i_am_on_the_delay_disappear_page() {
+        // notice the File: declaration added to the start of the path to the file
         TestRunner.driver.get("File:C:\\Users\\EricSuminski\\Desktop\\220221PwA\\Week9\\Day3\\src\\test\\resources\\delay-disappear.html");
     }
     @When("I click the button")
@@ -19,6 +20,7 @@ public class DelayDisappearSteps {
     }
     @Then("I should see an alert with some text")
     public void i_should_see_an_alert_with_some_text() {
+        // the ExpectedConditions class has lots of helpful methods you can use with your WebDriverWait
         TestRunner.wait.until(ExpectedConditions.alertIsPresent());
         Assert.assertEquals("this shows up after 3 seconds!",TestRunner.driver.switchTo().alert().getText());
     }
