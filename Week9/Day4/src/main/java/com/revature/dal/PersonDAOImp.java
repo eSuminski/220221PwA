@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonDAOImp implements PersonDAOInterface{
-    // your database handles this part, this is here for simplicity
+    /*
+        DO NOT ADD THESE FIELDS TO YOUR PROJECT DAOS: YOUR DATABASE WILL HANDLE THIS. THESE ARE
+        PRESENT ONLY FOR THE PURPOSE OF THIS EXAMPLE
+     */
     public static List<Person> people = new ArrayList<>();
     public static int idGenerator = 1;
 
