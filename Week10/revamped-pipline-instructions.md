@@ -13,6 +13,9 @@
             - SSH for your IP address to SSH into your EC2
             - Github API access for githooks
                 - custom tcp access for the "hooks" in this list: https://api.github.com/meta
+![grouping one](security-grouping-one.png)
+![grouping two](security-grouping-two.png)
+This results in the following HTML:
     - link a key pair with your instance. Create one if you don't have it, and save it somewhere secure
 - connect via EC2 Instance Connect or SSH client
 - sudo yum -y update

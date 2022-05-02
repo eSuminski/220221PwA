@@ -25,7 +25,7 @@ import java.time.Duration;
             glue: this tells Cucumber where the step implementations are. Direct it to a package
             plugin: this is an optional setting we use to generate a nice html report of the test results
          */
-        features = {"src/test/resources/features/UsingWaits.feature"},
+        features = {"src/test/resources/features"},
         glue = "com/revature/steps",
         plugin = {"pretty","html:src/test/resources/reports/html-e2e-report.html"}
 )
