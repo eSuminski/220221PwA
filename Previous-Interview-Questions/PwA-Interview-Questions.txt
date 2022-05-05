@@ -1,0 +1,180 @@
+1.	What is BDD?
+2.	Explain the SDLC.
+3.	(For me, he asked me if I preferred Java or Python.  I said Java.  He then asked me multiple Java questions). What is encapsulation?
+4.	What is the difference between overriding and overloading, and how do you use them?
+5.	What are the different access modifiers?  Would it be best practice to make everything public?
+6.	How do I report a bug when working in my P3?
+7.	How did I set up my E2E tests in P3, and explain the process.
+8.	What commands are in the Data Manipulation Language?  Data Definition Language?
+9.	How would I return a list of all original entries from a table in SQL?  
+--------------------------------------------------------------------------------------
+I am doing fine, questions I was asked during the interview were simple Java questions, like what is inheritance, Abstraction. I was also asked questions like what's 
+the difference between Override and Overload, how to create custom exception and how to handle a exception as well as how to handle multiple exceptions, walkthrough my
+project, what did I use to connect my frontend to my backend, and Multithreading (they were curious on how we handled multiple requests).
+--------------------------------------------------------------------------------------
+•	Tell me about yourself.
+•	How was your experience at revature?
+•	What technologies did you learn?
+•	Can you tell me about the projects that you did?
+•	What was your role in the latest project?
+•	What part of the project were you involved with?
+•	What were some of the debugging software you used?
+•	How would you store a list of numbers in java? (The data type)
+•	What is inheritence in java and how would you implement it?
+•	What is method overloading?
+•	How comfortable are you with SQL?
+•	What function would you use to count the number of characters in a string in SQL data?
+•	How would you join two tables with one column exactly matching?(the exact syntax)
+--------------------------------------------------------------------------------------
+Java
+•	4 pillars of OOP in detail with examples
+•	Difference between inner class and subclass
+•	How to make a class non inheritable
+•	static keyword meaning and examples of static methods
+•	abstract vs interface
+•	access modifiers
+
+SQL
+•	select query
+•	how to nest queries
+•	how to count number of rows from result
+•	how to get matching string results
+•	delete vs truncate vs drop
+•	Types of joins and what they are
+•	how to get first 20 rows only 
+•	how to sort result
+--------------------------------------------------------------------------------------
+How does Selenium work? Can you explain how does it start, or what do you need to get it to work? 
+
+Do you know the commands for Selenium? 
+
+Do you know TestNG annotations 
+
+What kind of tools did you learn during your time in Revature? 
+
+What is a Feature file? 
+
+What is the Index syntax in SQL 
+
+Do you know the differences of joins and if so, can you explain each one? 
+
+Did you only do automation testing? Or did you do manual testing as well? 
+--------------------------------------------------------------------------------------
+What is a static method in java?
+What is Cucumber?
+Tell me what Selenium is
+What is a page object model?
+Why do we use page object models?
+What is the benefit of page object models?
+What is gherkin syntax?
+Show me an example of gherkin syntax
+Create a step for me
+what is regressive testing vs integration testing?
+Gave java code and asked me what the output would be.
+--------------------------------------------------------------------------------------
+What is the SDLC?
+What does a tester do during the first phase ‘Determine software requirements’?
+What is the STLC?
+Who takes care of the unit tests?
+Explain inner joins, outer joins, left joins, and right joins in sql.
+What is indexing in a database?
+What is a defect?
+What is static testing?
+What is the difference between system testing and UAT testing?
+What is the difference between a defect’s priority rating and severity rating?
+What is the defect lifecycle?
+What is DevOps in general?
+What kinds of bug reporting tools have we used?
+What testing frameworks have we used?
+--------------------------------------------------------------------------------------
+They asked me about a lot about Selenium:
+1. Setting up selenium
+2. Selenium frameworks
+3. Explicit wait vs. Implicit wait
+4. Selectors (id, class, xpath, etc.)
+5. Using id vs xpath
+6. Meaning of slashes in xpath
+7. Getting value from input box
+8. Getting value from dropdown menu
+9. Getting value from alert
+10. Close vs. Quit commands
+They also ask about Agile and E2E:
+1. The ceremonies...and deciding the time of sprints
+2. Feature vs Scenario
+3. Crafting user stories and acceptance criteria
+4. Outline scenario
+5. Getting a value from excel sheet and inputting in E2E test
+They asked about API testing:
+1. Types of routes used
+2. Head method
+3. Automating testing with Postman
+They ask about testNG:
+1. Test priority
+They ask about defect lifecycle and bug reporting:
+1. what is the defect lifecycle
+2. priority vs severity
+3. reporting bugs
+4. what to do if boss doesn’t want to work on bug right away
+They ask about Maven, DevOps, Git & Github:
+1. Maven lifecycle
+2. the parts of pom.xml
+3. CI with Jenkins
+4. How to start Jenkins...git command
+5. How to automate builds on a certain and time....every Friday
+6. How to solve merge conflicts
+7. Command to check if file is not stage
+They about Java:
+1. Collections and its implementations
+2. Interfaces
+3. Difference between arraylist and list
+4. What’s a linked list
+--------------------------------------------------------------------------------------
+Java Questions:
+•	What is a string buffer?
+•	He gave me an example and asked what it would do.
+The example:
+String s = new String["firstname"];
+s.concat("lastname");
+•	He asked for a real-life example of an interface. He didn't like my answer here, but then went and explained an example with an SQL interface that you could use to connect, disconnect, etc. to any database you are given.
+•	He asked for me to explain one of the pillars of OOP.
+Selenium Questions:
+•	He asked me to explain xpath and to write an example.
+•	He asked about TestNG and what we used it for.
+•	He asked how I would open a browser using Selenium.
+•	He asked for 3 examples of positive tests/negative tests for a login feature in gherkin syntax.
+•	Lastly, he asked me to show him how we used selenium in one of our projects.
+--------------------------------------------------------------------------------------
+1.	What's the difference between an array and an array list? 
+2.	How would I write a scenario ?
+3.	What is the difference between test plan and test strategy? 
+4.	How did I use testNg in my testing and how did I document my test?
+5.	What is Selenium and how did I use it in my projects
+--------------------------------------------------------------------------------------
+Asked about test cases. 
+Asked about my experience with selenium. 
+Asked about postman and http verbs. 
+Asked about my methods and speed of learning. 
+As a math major, I was asked about my skill in Statistics.
+How I felt about flex time.
+How I felt about late hours
+--------------------------------------------------------------------------------------
+Questions/Selenium:
+Using your preferred IDE, write the selenium codes
+1.	Write how you would create a chrome driver object.
+2.	Write how you would input values in selenium(ex: username,password)
+3.	write how you would click a button in selenium
+4.	assuming that your test case skips entering the username/password and tries to click on the login button, how do you capture the error message using selenium
+5.	What is the difference between a scenario  and a scenario outline. 
+Questions/Core Java:
+
+Given the following string write out how would count the number of ID's in the string.(Basically count the number of words in a string)
+
+  String employeeID="ID1, ID2, ID2, ID3, ID4, ID5, ID6......................."
+
+Questions/SQL:
+
+1.	write a query to select the employee record where the employee has the max salary from the employee table
+2.	write a query to find the average of the salaries from the employee table.
+--------------------------------------------------------------------------------------
+I was asked mostly about the testing frameworks we learned in training like PyTest, TestNG, Mockito, Cucumber, Behave, and 
+Selenium. Also, was asked about the STLC and a bit about Java. Hope this helps!
